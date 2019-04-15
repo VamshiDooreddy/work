@@ -1,0 +1,3 @@
+$pic_loc = $_FILES['pic']['tmp_name'];
+$folder="uploads/".uniqid();
+move_uploaded_file($pic_loc,$folder);

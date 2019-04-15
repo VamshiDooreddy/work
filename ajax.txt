@@ -1,0 +1,7 @@
+var response = $.ajax({
+                   type: "POST",   
+                   url: "profile_update.php",   
+                   async: false,
+                   data: {'state':state},
+                   dataType: "json",
+          }).responseText;

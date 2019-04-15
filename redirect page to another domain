@@ -1,0 +1,4 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^employee-scheduling-software.html$ http://newdomain.example.org/employee-scheduling-software.html
+</IfModule>

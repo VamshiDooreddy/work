@@ -1,0 +1,46 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteCond %{REQUEST_FILENAME}\.php -f
+
+RewriteRule ^post/([0-9a-zA-Z_-]+)/([0-9a-zA-Z_-]+) post.php?target=$1&title=$2 [NC,L]
+
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteCond %{REQUEST_FILENAME}\.php -f
+
+RewriteRule ^coupon_info/([0-9a-zA-Z_-]+)/([0-9a-zA-Z_-]+) coupon_info.php?target=$1&title=$2 [NC,L]
+
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteCond %{REQUEST_FILENAME}\.php -f
+
+RewriteRule ^freebies_info/([0-9a-zA-Z_-]+)/([0-9a-zA-Z_-]+) freebies_info.php?target=$1&title=$2 [NC,L]
+
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteCond %{REQUEST_FILENAME}\.php -f
+
+RewriteRule ^rewards_info/([0-9a-zA-Z_-]+)/([0-9a-zA-Z_-]+) rewards_info.php?target=$1&title=$2 [NC,L]
+
+
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteCond %{REQUEST_FILENAME}\.php -f
+
+RewriteRule ^deals/([0-9a-zA-Z_-]+) deals.php?deals=$1 [NC,L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteCond %{REQUEST_FILENAME}\.php -f
+
+RewriteRule ^stores/([0-9a-zA-Z_-]+) stores.php?store=$1 [NC,L]

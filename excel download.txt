@@ -1,0 +1,29 @@
+<?php
+include_once '../db/db.php';
+$sql = "SELECT * FROM tbl_registration";
+$result = mysql_query($sql);
+$output = '';
+if(mysql_num_rows($result)>0){
+    $i=0;
+    $output .= "S.No\t";
+    $output .= "name\t";
+    $output .= "email\t";
+    $output .= "Phone\t";
+    $output .= "Registred Date\t";
+    $output .= "\n";
+    while($row = mysql_fetch_assoc($result)){
+        $i++;
+        $output .=  $i."\t";  
+        $output .=  $row['txt_name']."\t";  
+        $output .=  $row['txt_email']."\t";  
+        $output .=  $row['txt_phone']."\t";  
+        $output .=  $row['txt_date']."\t";  
+        $output .=  "\n";
+    }
+    header('Content-Type: application/x-msdownload');
+    header('Content-Disposition: attachment; filename=la_excellence_users_details.xls');
+    echo $output;
+    header("location:../users.php");
+}
+?>
+

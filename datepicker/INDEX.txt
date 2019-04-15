@@ -1,0 +1,9 @@
+// datepicker starts here
+$(function() {
+		      $('[data-toggle="datepicker"]').datepicker({
+		        dateFormat: 'd-m-y',
+		        autoHide: true,
+		        zIndex: 2048,
+		      });
+		    });
+// datepicker ends here
