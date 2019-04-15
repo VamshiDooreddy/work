@@ -1,0 +1,14 @@
+$intRoute = 1;//1 or 2 (1-Transactional,2-Promotional)
+$txtlinks = "Greetings! from aksharafinserv. Your Login Details : \nEmail : ".$txtEmail." \nPassword: ".$txtPassword."\n Thank you.";
+$strMSG =rawurlencode("$txtlinks");
+$strNumber = $txtPhone;
+$URL="http://bulksms.hanivisu.com/api/sendmsg.php?user=aksharafinserv&pass=123&sender=AKSFIN&phone=".$strNumber."&text=".$strMSG."&priority=ndnd&stype=normal";
+$ch = curl_init($URL);
+curl_setopt($ch, CURLOPT_SSL_VERIFYHOST,0);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER,0);
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_ENCODING,'UTF-8');
+curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+$output = curl_exec($ch);
+curl_close($ch);
+	    
